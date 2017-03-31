@@ -30,7 +30,7 @@ public class GravInteract : MonoBehaviour {
             otherRB = body.GetComponent<Rigidbody>();
             r_vec = otherRB.transform.position - thisRB.transform.position;
             r2 = Vector3.Dot(r_vec, r_vec);
-            if ( r2 > 0.005)
+            if ( r2 > 0.0005)
             {
                 
                 f_g_vec = f_g_vec + g * otherRB.mass * thisRB.mass /r2 * r_vec.normalized;

@@ -9,7 +9,7 @@ public class MoonInit : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         moonRB = GetComponent<Rigidbody>();
-        moonRB.velocity = new Vector3(-1.022f, 0f, 0f);
+        moonRB.velocity = new Vector3(-0.928f, 0f, 0f);
 	}
 	
 	// Update is called once per frame

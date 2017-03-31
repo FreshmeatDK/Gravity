@@ -17,7 +17,8 @@ public class Spaceship : MonoBehaviour {
     private float d_moon;
     private int pause;
     private bool initShipDone;
-
+    private Quaternion csmRotation;
+    private float csmAngle; // current angle to z-axis
 
     // Use this for initialization
     void Start () {
@@ -36,23 +37,24 @@ public class Spaceship : MonoBehaviour {
             initShip();
         }
 
-        r_moon = transform.position - moonObj.transform.position;
-
-        d_moon = r_moon.magnitude;
+        currentV.text = csmRB.velocity.magnitude.ToString();
+        currentA.text = angle.ToString();
 
         if (gm.pause || !initShipDone)
         {
             pause = 0;
         }
-
         else
         {
             pause = 1;
         }
 
+        r_moon = moonObj.transform.position - transform.position;
+        d_moon = r_moon.magnitude;
+
         if (d_moon < 9)
         {
-            Time.timeScale = Mathf.Sqrt(d_moon) / 3f * pause;
+            Time.timeScale = d_moon / 10f * pause;
             Time.fixedDeltaTime = 0.02f * Time.timeScale;
         }
         else
@@ -61,9 +63,14 @@ public class Spaceship : MonoBehaviour {
             Time.fixedDeltaTime = 0.02f * pause;
         }
 
-        currentV.text = csmRB.velocity.magnitude.ToString();
-        currentA.text = angle.ToString();
+        
 	}
+
+    private void FixedUpdate()
+    {
+        csmRotation = Quaternion.LookRotation(csmRB.velocity);
+        transform.rotation = csmRotation;
+    }
 
     void initShip()
     {

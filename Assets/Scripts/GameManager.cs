@@ -21,12 +21,12 @@ public class GameManager : MonoBehaviour {
         pausetext.text = "Indtast hastighed og vinkel til månen og tryk 'Go'";
     }
 
+    
     public void GetVelocityInput(string value)
     {
         float.TryParse(value, out startVelocity);
         startVelIsSet = true;
-
-        
+        Debug.Log(startVelocity);
     }
 
     public void GetAngleInput(string value)
