@@ -55,7 +55,7 @@ public class Spaceship : MonoBehaviour {
         if (d_moon < 9)
         {
             Time.timeScale = d_moon / 10f * pause;
-            Time.fixedDeltaTime = 0.02f * Time.timeScale;
+            Time.fixedDeltaTime = 0.002f * Time.timeScale;
         }
         else
         {
