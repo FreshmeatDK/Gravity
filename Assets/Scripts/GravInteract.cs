@@ -7,7 +7,7 @@ public class GravInteract : MonoBehaviour {
 
     public Vector3 f_g_vec;
 
-    private float g = 0.0667f;
+    private float g = 66738f;
 
     private GameObject[] bodies;
     private Rigidbody thisRB, otherRB;

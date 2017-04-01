@@ -11,6 +11,7 @@ public class CameraController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         transform.Rotate(0, 0, 0);
+        transform.position = new Vector3(csmObj.transform.position.x, 70, csmObj.transform.position.z);
 	}
 	
 	// Update is called once per frame
@@ -23,13 +24,13 @@ public class CameraController : MonoBehaviour {
         {
             camPos.x = (csmObj.transform.position.x + moonObj.transform.position.x) / 2;
             camPos.z = (csmObj.transform.position.z + moonObj.transform.position.z) / 2;
-            camPos.y = r_m.magnitude*2 +  4;
+            camPos.y = r_m.magnitude*2 +  80;
         }
         else
         {
             camPos.x = (csmObj.transform.position.x + earthObj.transform.position.x) / 2;
             camPos.z = (csmObj.transform.position.z + earthObj.transform.position.z) / 2;
-            camPos.y = r_e.magnitude*2 + 4;
+            camPos.y = r_e.magnitude*2 + 80;
         }
 
         transform.position = camPos;

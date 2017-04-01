@@ -77,11 +77,14 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\EarthInit.cs" />
+    <Compile Include="Assets\Scripts\EarthmarkerController.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\GravIndicatorController.cs" />
     <Compile Include="Assets\Scripts\GravInteract.cs" />
     <Compile Include="Assets\Scripts\MoonInit.cs" />
+    <Compile Include="Assets\Scripts\MoonMarkerController.cs" />
     <Compile Include="Assets\Scripts\Spaceship.cs" />
+    <Compile Include="Assets\Scripts\csmMarkerController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\materials\Earthshader.shader" />
